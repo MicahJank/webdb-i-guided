@@ -1,8 +1,11 @@
 module.exports = {
   development: {
-    client: 'sqlite3',
+    client: 'pg',
     connection: {
-      filename: './data/posts.db3',
+      host: 'localhost',
+      user: 'postgres',
+      password: 'jankeblofu92',
+      database: 'postgres'
     },
     useNullAsDefault: true,
     migrations: {
@@ -12,4 +15,23 @@ module.exports = {
       directory: './data/seeds',
     },
   },
+
+  production: {
+    client: 'pg',
+    connection: {
+      host: 'localhost',
+      user: 'postgres',
+      password: 'jankeblofu92',
+      database: 'postgres'
+    },
+    useNullAsDefault: true,
+    migrations: {
+      directory: './data/migrations',
+    },
+    seeds: {
+      directory: './data/seeds',
+    },
+  },
+
+
 };
